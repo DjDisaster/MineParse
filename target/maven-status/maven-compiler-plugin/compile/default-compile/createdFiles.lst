@@ -1,0 +1,5 @@
+me/djdisaster/parser/parsing/tokens/Number.class
+me/djdisaster/parser/parsing/Token.class
+me/djdisaster/parser/MineParse.class
+me/djdisaster/parser/parsing/tokens/Literal.class
+me/djdisaster/parser/parsing/Parser.class
