@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="815060a9-8ee9-4d07-a418-36b6d2033c30" name="Changes" comment="Initial commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/djdisaster/parser/SyntaxRegistery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/djdisaster/parser/parsing/compiling/idk/EventMethod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/djdisaster/parser/parsing/syntax/ParseContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/djdisaster/parser/parsing/tokens/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/djdisaster/parser/parsing/tokens/Tab.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/djdisaster/parser/parsing/tokens/Variable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/djdisaster/parser/parsing/utils/Variable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/djdisaster/parser/parsing/utils/Variables.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/testCode.mp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/djdisaster/parser/MineParse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djdisaster/parser/MineParse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/djdisaster/parser/Testing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djdisaster/parser/Testing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/djdisaster/parser/parsing/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djdisaster/parser/parsing/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/djdisaster/parser/parsing/compiling/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djdisaster/parser/parsing/compiling/Compiler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/djdisaster/parser/parsing/syntax/Expression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djdisaster/parser/parsing/syntax/EventSyntax.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/djdisaster/parser/parsing/syntax/SimpleSyntax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djdisaster/parser/parsing/syntax/SimpleSyntax.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/djdisaster/parser/parsing/syntax/Syntax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djdisaster/parser/parsing/syntax/Syntax.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/djdisaster/parser/parsing/tokens/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djdisaster/parser/parsing/tokens/Token.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/djdisaster/parser/parsing/types/Types.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djdisaster/parser/parsing/types/Types.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Parser-1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/djdisaster/parser/MineParse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/djdisaster/parser/MineParse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/djdisaster/parser/Testing.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/djdisaster/parser/Testing.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/djdisaster/parser/parsing/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/djdisaster/parser/parsing/Parser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/djdisaster/parser/parsing/compiling/Compiler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/djdisaster/parser/parsing/compiling/Compiler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/djdisaster/parser/parsing/syntax/Expression.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/djdisaster/parser/parsing/syntax/SimpleSyntax.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/djdisaster/parser/parsing/syntax/SimpleSyntax.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/djdisaster/parser/parsing/syntax/Syntax.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/djdisaster/parser/parsing/syntax/Syntax.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/djdisaster/parser/parsing/tokens/Token.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/djdisaster/parser/parsing/tokens/Token.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/me/djdisaster/parser/parsing/types/Types.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/me/djdisaster/parser/parsing/types/Types.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/original-Parser-1.0.jar" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2qWsCV2TBWlD2BLw191KkLtMP4J" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.MineParse.executor": "Run",
+    "Application.Testing.executor": "Run",
+    "Maven.MineParse [clean].executor": "Run",
+    "Maven.MineParse [package].executor": "Run",
+    "Maven.MineParse [test].executor": "Run",
+    "Maven.Parser [package].executor": "Run",
+    "Maven.Parser package.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/djdisaster/IdeaProjects/Parser",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.Testing">
+    <configuration name="MineParse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="me.djdisaster.parser.MineParse" />
+      <module name="Parser" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="me.djdisaster.parser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Testing" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="me.djdisaster.parser.Testing" />
+      <module name="Parser" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="me.djdisaster.parser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Parser package" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="package" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Testing" />
+        <item itemvalue="Application.MineParse" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="815060a9-8ee9-4d07-a418-36b6d2033c30" name="Changes" comment="" />
+      <created>1734789539479</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1734789539479</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1734810631663</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1734810631664</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+  </component>
+</project>
