@@ -9,7 +9,10 @@ public abstract class Token {
 	public static final Class<Token>[] tokenClasses = new Class[]{
 			Literal.class,
 			Number.class,
-			me.djdisaster.parser.parsing.tokens.string.String.class
+			me.djdisaster.parser.parsing.tokens.string.String.class,
+			Tab.class,
+			Player.class,
+			Variable.class
 	};
 
 	private static final Map<String, Class<Token>> tokenNameMap = generateTokenNameMap();

@@ -9,14 +9,35 @@ import java.util.Objects;
 
 public abstract class Syntax {
 
+
+	private  static ParseContext context = new ParseContext();
 	private static List<Syntax> syntaxes = new ArrayList<>();
+
 	public static List<Syntax> getSyntaxes() {
-		return syntaxes;
+		List<Syntax> currentSyntax = new ArrayList<>(syntaxes);
+		currentSyntax.addAll(context.getSyntaxes());
+		return currentSyntax;
 	}
+
+	public static ParseContext getContext() {
+		return context;
+	}
+
+
+	public static void addSyntax(Syntax syntax) {
+		syntaxes.add(syntax);
+	}
+
 
 	private static List<SimpleExpression> expressions = new ArrayList<>();
 	public static List<SimpleExpression> getExpressions() {
-		return expressions;
+		List<SimpleExpression> currentExpressions = new ArrayList<>(expressions);
+		currentExpressions.addAll(context.getExpressions());
+		return currentExpressions;
+	}
+
+	public static void addExpression(SimpleExpression expression) {
+		expressions.add(expression);
 	}
 
 
@@ -33,6 +54,8 @@ public abstract class Syntax {
 	}
 
 	private void generateTokenisedSyntaxPattern() {
+
+
 		int i = 0;
 		String[] split = syntaxToMatch.split("%");
 
@@ -42,7 +65,9 @@ public abstract class Syntax {
 			if (i % 2 == 0) {
 				if (!s.isEmpty()) {
 					System.out.println("literal: " + "\"" + s + "\"");
-					tokens.add(new Literal(s));
+					for (char c : s.toCharArray()) {
+						tokens.add(new Literal(String.valueOf(c)));
+					}
 				}
 			} else {
 				System.out.println("non-literal: " + "\"" + s + "\"");
@@ -79,15 +104,18 @@ public abstract class Syntax {
 	}
 
 
+
+
 	public boolean matches(List<Token> tokens) {
 
-		System.out.println("SYNTAX: " + tokenisedSyntaxPattern.toString());
+		//System.out.println("SYNTAX: " + tokenisedSyntaxPattern.toString());
 
-		System.out.println("TOKENS: " + tokens.size());
-		System.out.println("TOKENS2: " + tokenisedSyntaxPattern.size());
+		//System.out.println("TOKENS: " + tokens.size());
+		//System.out.println("TOKENS2: " + tokenisedSyntaxPattern.size());
 
+		//System.out.println("Checking: " + syntaxToMatch);
 		if (tokens.size() != tokenisedSyntaxPattern.size()) {
-			System.out.println("B");
+			//System.out.println("B - T1: " + tokens.size() + " T2: " + tokenisedSyntaxPattern.size());
 			return false;
 		}
 
@@ -97,14 +125,18 @@ public abstract class Syntax {
 			Token token2 = tokens.get(i);
 
 			if (!token1.getType().equals(token2.getType())) {
-				System.out.println("A");
-				return false;
+				if (!token2.getType().equalsIgnoreCase("variable")) {
+					return false;
+				}
+				//System.out.println("A");
+				//System.out.println("T1: " + token1.getType());
+				//System.out.println("T2: " + token2.getType());
 			}
 
 			if (token1.getType().equalsIgnoreCase("literal")) {
 				if (!token1.getValue().equalsIgnoreCase(token2.getValue())) {
-					System.out.println("T1V: " + token1.getValue());
-					System.out.println("T2V: " + token2.getValue());
+					//System.out.println("T1V: " + token1.getValue());
+					//System.out.println("T2V: " + token2.getValue());
 
 					return false;
 				}

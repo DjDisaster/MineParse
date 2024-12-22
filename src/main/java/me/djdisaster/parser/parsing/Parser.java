@@ -1,7 +1,6 @@
 package me.djdisaster.parser.parsing;
 
 import me.djdisaster.parser.parsing.compiling.Compiler;
-import me.djdisaster.parser.parsing.syntax.Expression;
 import me.djdisaster.parser.parsing.syntax.SimpleExpression;
 import me.djdisaster.parser.parsing.syntax.SimpleSyntax;
 import me.djdisaster.parser.parsing.syntax.Syntax;
@@ -29,13 +28,20 @@ public class Parser {
 			return "// Error [Tokens is somehow null, Please report this]";
 		}
 
+		int indentation = 0;
+		while (tokens.get(0).getType().equalsIgnoreCase("tab")) {
+			tokens.remove(0);
+			indentation++;
+			System.out.println("+ TAB");
+		}
+
+
 		Syntax matchedSyntax = null;
 
 		while (true) {
 			System.out.println("LOOP");
 			for (Syntax syntax : Syntax.getSyntaxes()) {
 				if (syntax.matches(tokens)) {
-					System.out.println("FOUND SYN");
 					matchedSyntax = syntax;
 					break;
 				}
@@ -47,16 +53,27 @@ public class Parser {
 			if (length == length2) {
 				break;
 			}
+			System.out.println("TOKENS: " + tokens);
 		}
+
+
+
 
 		System.out.println("NewTokenAmount:" + tokens.size());
 
 		if (matchedSyntax == null) {
 			System.out.println("Syntax not found: " + line);
+
+			int i = 0;
+			for (Token t : tokens) {
+				i++;
+				System.out.println(i + ": " + t.getType() + ": " + t.getValue());
+			}
+
 			return "// Error [Syntax not found]";
 		}
 		matchedSyntax.updateJava(tokens);
-		compiler.add(matchedSyntax);
+		compiler.add(indentation, matchedSyntax);
 		return matchedSyntax.updateJava(tokens);
 	}
 
@@ -71,11 +88,13 @@ public class Parser {
 			List<Token> currentTokens = new ArrayList<>(tokens.subList(start, end));
 
 			for (SimpleExpression syntax : Syntax.getExpressions()) {
+				//System.out.println("SYN: " + syntax.getClass().getSimpleName());
 				if (syntax.matches(currentTokens)) {
 
 					Token token = syntax.getNewToken(currentTokens);
 					tokens.subList(start, end).clear();
 					tokens.add(start, token);
+					//System.out.println("MATCH FOUNDS!!!! EXPR");
 					return;
 				}
 			}
@@ -111,8 +130,8 @@ public class Parser {
 				}
 				tokens.add(currentToken);
 
-				startPoint++;
-				endPoint = startPoint;
+				startPoint = endPoint;
+
 				continue whileLoop;
 
 			}
@@ -136,6 +155,8 @@ public class Parser {
 	}
 
 	public static void sanitise(List<Token> tokens) {
+
+		/*
 		int i = 0;
 		while (i < tokens.size()-1) {
 			Token currentToken = tokens.get(i);
@@ -147,6 +168,8 @@ public class Parser {
 				i++;
 			}
 		}
+
+		 */
 
 	}
 

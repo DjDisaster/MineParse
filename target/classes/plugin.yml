@@ -1,4 +1,4 @@
 name: Parser
 version: '1.0'
-main: me.djdisaster.parser.Parser
+main: me.djdisaster.parser.MineParse
 api-version: '1.20'

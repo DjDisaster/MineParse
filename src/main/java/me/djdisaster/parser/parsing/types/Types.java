@@ -1,5 +1,8 @@
 package me.djdisaster.parser.parsing.types;
 
+import me.djdisaster.parser.parsing.utils.Variable;
+import org.bukkit.entity.Player;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -9,9 +12,9 @@ import java.util.stream.Stream;
 
 public class Types {
 
-	private static List<Class<?>> types = new ArrayList<>(Arrays.asList(new Class<?>[]{
-			Number.class, String.class
-	}));
+	private static final List<Class<?>> types = new ArrayList<>(Arrays.asList(
+			Number.class, String.class, Player.class, Variable.class
+	));
 
 	public static List<String> classNames = types.stream()
 			.map(Class::getSimpleName)
@@ -30,6 +33,8 @@ public class Types {
 	}
 
 	public static Class<?> getClassFromName(String className) {
+		System.out.println("get class: " + className);
+		System.out.println("CONTAINS? " + classLookup.containsKey(className));
 		return classLookup.get(className);
 	}
 

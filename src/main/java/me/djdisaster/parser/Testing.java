@@ -4,11 +4,9 @@ import me.djdisaster.parser.parsing.Parser;
 import me.djdisaster.parser.parsing.compiling.Argument;
 import me.djdisaster.parser.parsing.compiling.Compiler;
 import me.djdisaster.parser.parsing.compiling.idk.CMethod;
-import me.djdisaster.parser.parsing.syntax.FunctionSyntax;
-import me.djdisaster.parser.parsing.syntax.SimpleExpression;
-import me.djdisaster.parser.parsing.syntax.SimpleSyntax;
-import me.djdisaster.parser.parsing.syntax.Syntax;
+import me.djdisaster.parser.parsing.syntax.*;
 import me.djdisaster.parser.parsing.tokens.Number;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.codehaus.plexus.util.cli.Arg;
 
 import java.util.Arrays;
@@ -20,21 +18,37 @@ public class Testing {
 
 
 			Syntax.getSyntaxes().add(
-
-				new SimpleSyntax("print %Number%", "Test: %expr-1% dsa")
+					new SimpleSyntax("broadcast %string%", "Bukkit.broadcastMessage(%expr-1%);")
 			);
 			Syntax.getSyntaxes().add(
-				new FunctionSyntax("handled in the class.")
+					new SimpleSyntax("broadcast %number%", "Bukkit.broadcastMessage(\"\" + %expr-1%);")
 			);
+			Syntax.getSyntaxes().add(
+					new FunctionSyntax("handled in the class.")
+			);
+			Syntax.getSyntaxes().add(
+					new EventSyntax("on load:", PlayerJoinEvent.class)
+			);
+
 
 			Syntax.getExpressions().add(
-					new SimpleExpression(Number.class, "%number%+%number%", "%expr-1%+%expr-2%")
+					new SimpleExpression(Number.class, "%number%+%number%", "(%expr-1% add %expr-2%)")
 			);
 			Compiler compiler = new Compiler();
-			Parser.parseLine(compiler, "function test(test: string, test2: number) :: number:");
-			Parser.parseLine(compiler, "test 5");
 
+			long parseStart = System.currentTimeMillis();
+			Parser.parseLine(compiler, "on load:");
+			Parser.parseLine(compiler, "\tbroadcast \"hello\"");
+			Parser.parseLine(compiler, "function test2(test: string, test2: number) :: number:");
+			Parser.parseLine(compiler, "\tbroadcast 1+1");
+			long parseEnd = System.currentTimeMillis();
+			long compileStart = System.currentTimeMillis();
 			compiler.getCompiled();
+			long compileEnd = System.currentTimeMillis();
+			System.out.println("Parsing took " + (parseEnd - parseStart) + " ms");
+			System.out.println("Compiling took " + (compileEnd - compileStart) + " ms");
+
+
 
 
 		} catch (Exception e) {

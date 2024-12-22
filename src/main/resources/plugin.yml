@@ -1,4 +1,4 @@
 name: Parser
 version: '${project.version}'
-main: me.djdisaster.parser.Parser
+main: me.djdisaster.parser.MineParse
 api-version: '1.20'
